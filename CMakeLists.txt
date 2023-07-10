@@ -1,0 +1,20 @@
+cmake_minimum_required(VERSION 3.15)
+if (WIN32)
+    include(cmake/automate-vcpkg.cmake)
+    vcpkg_bootstrap()
+    vcpkg_install_packages(sdl2)
+endif ()
+
+project(dtts_cpp LANGUAGES CXX)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_BINARY_DIR})
+find_package(SDL2 REQUIRED)
+include_directories(${SDL2_INCLUDE_DIRS} ${SDL2_INCLUDE_DIRS}/SDL2)
+
+add_subdirectory(src)
