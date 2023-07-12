@@ -5,7 +5,7 @@
 
 namespace
 {
-static const std::string fontPath = "C:\\Users\\aldra\\source\\repos\\dtts-cpp\\data\\font.bmp"; // TODO: Fix this, seriously
+static const std::string fontPath = "../../data/font.bmp"; // TODO: Fix this, seriously
 static const std::string fontMap = "0123456789abcdefghijklmnopqrstuvwxyz.,!?-+/'\"<>^_ ";
 } // namespace
 

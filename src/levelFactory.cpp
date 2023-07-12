@@ -81,7 +81,7 @@ bool LevelFactory::loadLevel(int index, Level &level)
         return false;
     }
     level.mTitle = sLevelInfo[index].levelName;
-    std::string baseLevelPath = "C:\\Users\\aldra\\source\\repos\\dtts-cpp\\data\\levels\\";
+    std::string baseLevelPath = "../../data/levels/";
     std::string filePath = baseLevelPath + sLevelInfo[index].levelPath;
     SDL_Surface *surface = SDL_LoadBMP(filePath.c_str());
     if (!surface)
